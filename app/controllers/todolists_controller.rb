@@ -1,23 +1,25 @@
 class TodolistsController < ApplicationController
   def new
-    @list = List.new
+    @book = Book.new
   end
   
   def create
-  　list = List.new(list_params)
-    
-    list.save
-    
-    redirect_to '/top'
+    book = Book.new(book_params)
+    book.save
+    redirect_to todolist_path(book.id)
   end
   
   def index
-    @list = List.all
+    @books = Book.all
   end
   
+  def show
+    @book = Book.find(params[:id])
+  end  
+  
   private
-  def list_params
-    params.require(:list).permit(:title, :body)
+  def book_params
+    params.require(:book).permit(:title, :body)
   end
 
   
