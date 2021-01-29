@@ -1,5 +1,9 @@
 class TodolistsController < ApplicationController
   
+  def new
+    @book = Book.new
+  end
+  
   def create
     book = Book.new(book_params)
     book.save
@@ -19,11 +23,7 @@ class TodolistsController < ApplicationController
     @book = Book.find(params[:id])
   end
   
-  def update
-    book = Book.find(params[:id])
-    book.update(book_params)
-    redirect_to todolist_path(book.id)
-  end  
+  
   
   def destroy
     book = Book.find(params[:id])
