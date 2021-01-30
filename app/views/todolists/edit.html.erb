@@ -1,6 +1,6 @@
 <strong>Editing Book</strong>
 
-<%= form_with model: @book, url:'/todolists', local:true do |f| %>
+<%= form_with model: @book, url:"/todolists/#{@book.id}", local:true do |f| %>
 <div>
    <label for=book_title>Title</label>
     <%= f.text_field :title %>
@@ -10,11 +10,11 @@
     <%= f.text_area :body %>
 </div>
 <div>
-    <%= f.submit 'Update book' %>
+    <%= f.submit 'Update Book' %>
 </div>
+
+<% end %>
 
 <%= link_to "Show", todolist_path(@book.id)  %>
 |
 <%= link_to "Back", "/todolists" %>
-
-<% end %>
