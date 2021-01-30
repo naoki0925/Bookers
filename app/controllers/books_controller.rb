@@ -1,5 +1,4 @@
-class TodolistsController < ApplicationController
-  
+class BooksController < ApplicationController
   def new
     @book = Book.new
   end
@@ -40,4 +39,6 @@ class TodolistsController < ApplicationController
   end
 
   
+end
+
 end
