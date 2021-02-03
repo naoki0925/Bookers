@@ -1,4 +1,4 @@
-<strong>Editing Book</strong>
+3<strong>Editing Book</strong>
 <%= form_with model: @book, url:"/books/#{@book.id}", local:true do |f| %>
 <% if @book.errors.any? %>
 <h2><%= @book.errors.count %> error prohibited this book from being saved:</h2>

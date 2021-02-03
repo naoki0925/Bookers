@@ -29,7 +29,7 @@
 
 
 <h2>New book</h2>
-<%= form_with model: @book, url:'/books/', local:true do |f| %>
+<%= form_with model: @book, url:'/books', local:true do |f| %>
 <% if @book.errors.any? %>
 <h2><%= @book.errors.count %> error prohibited this book from being saved:</h2>
 <ul>
@@ -38,10 +38,16 @@
     <% end %>
 </ul>
 <% end %>
-<h4>Title</h4>
-<%= f.text_field :title %>
-<h4>Body</h4>
-<%= f.text_area :body %>
-<%= f.submit 'Create Book' %>
+<div>
+   <label for=book_title>Title</label>
+    <%= f.text_field :title %>
+</div>
+<div>
+    <label for=book_body>Body</label>
+    <%= f.text_area :body %>
+</div>
+<div>
+    <%= f.submit 'Create Book' %>
+</div>
 
 <% end %>
