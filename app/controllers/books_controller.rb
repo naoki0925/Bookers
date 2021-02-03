@@ -10,7 +10,7 @@ class BooksController < ApplicationController
      redirect_to book_path(@book)
     else
       @books = Book.all
-      render template: "books/index"
+      render :index
     end
   end
   
@@ -33,7 +33,7 @@ class BooksController < ApplicationController
       flash[:notice] = "Book was successfully updated."
       redirect_to book_path(@book)
     else
-      render template: "books/edit"
+      render :edit
    end
   end 
   
