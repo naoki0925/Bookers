@@ -1,6 +1,13 @@
 <strong>Editing Book</strong>
-
 <%= form_with model: @book, url:"/books/#{@book.id}", local:true do |f| %>
+<% if @book.errors.any? %>
+<h2><%= @book.errors.count %> error prohibited this book from being saved:</h2>
+<ul>
+    <% @book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+</ul>
+<% end %>
 <div>
    <label for=book_title>Title</label>
     <%= f.text_field :title %>
